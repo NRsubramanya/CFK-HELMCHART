@@ -1,0 +1,5 @@
+apiVersion: v2
+name: kafka-wrapper
+description: A wrapper chart for deploying Kafka and ZooKeeper
+version: 0.1.0
+namespace: kb

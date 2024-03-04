@@ -1,0 +1,26 @@
+apiVersion: platform.confluent.io/v1beta1
+kind: Kafka
+metadata:
+  name: kafka
+  namespace: kb
+spec:
+  replicas: {{ .Values.kafka.replicaCount }}
+  image:
+    application: confluentinc/cp-server:7.5.0
+    init: confluentinc/confluent-init-container:2.7.0
+  dataVolumeCapacity: 10Gi
+
+  listeners:
+   # internal:
+    #  authentication:
+     #   type: mtls
+     # tls:
+      #  enabled: true
+    external:
+      authentication:
+        type: plain
+        jaasConfig:
+          secretRef: {{ .Values.kafka.secret }}
+      tls:
+        enabled: false
+

@@ -1,0 +1,13 @@
+kafka:
+  name: kafka
+  #secret: secret1
+  secret: kafka-secret10
+  #secretFilePath: "/home/sumo/cfk_routing/confluent-for-kubernetes-2.7.3-20231228/helm/confluent-for-kubernetes/kafka-wrapper-chart/secrets/sasl.json"
+  replicaCount: 3
+  # Add other Kafka configuration values
+
+zookeeper:
+  replicaCount: 3
+  # Add other ZooKeeper configuration values
+
+
